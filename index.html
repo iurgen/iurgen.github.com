@@ -1,17 +1,104 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Iurgen</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  </head>
-  <body>
-      <div id="center">
-    
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="Iurgen" content="">
+  <meta name="Iurgen" content="">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Iurgen</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+ 
+</head>
+
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="#"> 首页 </a></li>
+      <li><a href="#"> 关于 </a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <div class="mainContent">
+      <div class="day">
+        <div class="date-time">
+          <a href="#">2016-3-29</a>
+        </div>
+        <div class="p-box">
+          <h1>css盒模型</h1>
+          <p>
+            摘要：1、xxxxx 2、xxxxxxx 3、xxxxx
+          </p>
+          <a href="#">阅读全文</a>
+        </div>
+        <div class="postDesc">
+          posted @ 2016-03-29 13:56
+        </div>
       </div>
-  </body>
+
+      <div class="day">
+        <div class="date-time">
+          <a href="#">2016-3-29</a>
+        </div>
+        <div>
+        </div>
+        <div class="postDesc">
+          posted @ 2016-03-29 13:56
+        </div>
+      </div>
+      <div class="day">
+        <div class="date-time">
+          <a href="#">2016-3-29</a>
+        </div>
+        <div>
+        </div>
+        <div class="postDesc">
+          posted @ 2016-03-29 13:56
+        </div>
+      </div>
+    </div>
+
+    <div class="main-right">
+       <div class="t3">
+        <div class="t4">
+            <i class="hour hour3">3</i>
+            <i class="hour hour6">6</i>
+            <i class="hour hour9">9</i>
+            <i class="hour hour12">12</i>
+
+            <div id="miao"></div>
+            <div id="fen"></div>
+            <div id="shi"></div>
+            <div id="point"></div>
+        </div>
+     </div>
+    </div>
+
+
+  </div>
+
+  <footer class="blog-footer">
+    <p>Copyright ©2016 Iurgen</p>
+  </footer>
+
+</body>
+<script type="text/javascript">
+    var miao = document.getElementById("miao");
+    var fen = document.getElementById("fen");
+    var shi = document.getElementById("shi");
+
+    var clock = setInterval(function () {
+        var nowDate = new Date();//每次读取当前时间
+        var hour = nowDate.getHours();
+        var minute = nowDate.getMinutes();
+        var second = nowDate.getSeconds();
+
+        var circleHour = hour % 12 * 30;
+        shi.style.transform = "rotate(" + circleHour + "deg)";//读取到的时间为24小时制，转换为12小时
+        fen.style.transform = "rotate(" + minute * 6 + "deg)";
+        miao.style.transform = "rotate(" + second * 6 + "deg)";
+    }, 1000);
+</script>
 </html>
